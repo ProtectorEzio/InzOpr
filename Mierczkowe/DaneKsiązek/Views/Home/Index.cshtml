@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DaneKsiązek.Models.Ksiazki>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Autor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tytuł)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LiczbaStron)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Autor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tytuł)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LiczbaStron)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ksiazkaID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ksiazkaID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ksiazkaID })
+        </td>
+    </tr>
+}
+
+</table>

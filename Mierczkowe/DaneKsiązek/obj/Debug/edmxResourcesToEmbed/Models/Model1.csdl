@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KsiazkiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Ksiazki">
+    <Key>
+      <PropertyRef Name="ksiazkaID" />
+    </Key>
+    <Property Name="ksiazkaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Autor" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tytuł" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LiczbaStron" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="KsiazkiEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Ksiazki" EntityType="Self.Ksiazki" />
+  </EntityContainer>
+</Schema>
